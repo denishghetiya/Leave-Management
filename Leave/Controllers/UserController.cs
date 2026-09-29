@@ -173,7 +173,7 @@ namespace Leave.Controllers
                                 <a href=""https://localhost:44376/Admin/AllLeaveList"" class=""btn"">Approve/Reject</a>
                             </div>
                             <div class=""footer"">
-                                © [2025] [Krista Technology] - All Rights Reserved
+                                © [2025] [Denish Technology] - All Rights Reserved
                             </div>
                         </div>
                     </body>

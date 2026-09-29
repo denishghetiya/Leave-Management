@@ -217,10 +217,10 @@ namespace Leave.Controllers
                                 <p>If you have any questions, feel free to contact HR.</p>
                     
                                 <p>Best Regards,<br>
-                                Krista Technology<br></p>
+                                Denish Technology<br></p>
                             </div>
                             <div class=""footer"">
-                                © [2025] [Krista Technology] - All Rights Reserved
+                                © [2025] [Denish Technology] - All Rights Reserved
                             </div>
                         </div>
                     </body>
