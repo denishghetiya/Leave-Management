@@ -1,0 +1,45 @@
+﻿@model List<Leave.DBContext.AllLeaf>
+
+@{
+    ViewData["Title"] = "All Leave Requests";
+}
+
+<h2>All Leave Requests</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>LeaveID</th>
+            <th>Username</th>
+            <th>Reason</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var leave in Model)
+        {
+            <tr>
+                <td>@leave.LeaveId</td>
+                <td>@leave.User.Username</td>
+                <td>@leave.Reason</td>
+                <td>@leave.FromDate</td>
+                <td>@leave.ToDate</td>
+                <td>@(leave.IsApprove)</td>
+                <td>
+                    <form asp-action="ApproveRejectLeave" method="post">
+                        <input type="hidden" name="leaveId" value="@leave.LeaveId" />
+                        <button name="isApprove" value="Approved" class="btn btn-success">Approve</button>
+                        <button name="isApprove" value="Rejected" class="btn btn-danger">Reject</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div><a href="@Url.Action("Dashboard")" class="btn btn-info">Dashboard</a></div>
+<br />
+<div><a href="@Url.Action("DownloadLeaveList", "Admin")" class="btn btn-success">Download Excel</a></div>

@@ -1,0 +1,30 @@
+﻿@model Leave.DBContext.User
+
+<h2>Edit User</h2>
+
+<form asp-action="EditUser" method="post">
+    <input type="hidden" asp-for="UserId" />
+
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" asp-for="Username" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" asp-for="Email" class="form-control" required />
+    </div>
+
+    <div class="form-check">
+        <input asp-for="IsAdmin" class="form-check-input" type="checkbox" />
+        <label asp-for="IsAdmin" class="form-check-label">Is Admin</label>
+    </div>
+
+    <div class="form-check">
+        <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+        <label asp-for="IsActive" class="form-check-label">Is Active</label>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Save Changes</button>
+    <a asp-action="UserList" class="btn btn-secondary">Cancel</a>
+</form>

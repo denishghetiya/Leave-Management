@@ -1,0 +1,35 @@
+﻿@model List<Leave.DBContext.AllLeaf>
+
+@{
+    ViewData["Title"] = "My Leave Requests";
+}
+
+<h2>My Leave Requests</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>LeaveID</th>
+            <th>Reason</th>
+            <th>From Date</th>
+            <th>To Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var leave in Model)
+        {
+            <tr>
+                <td>@leave.LeaveId</td>
+                <td>@leave.Reason</td>
+                <td>@leave.FromDate</td>
+                <td>@leave.ToDate</td>
+                <td>@leave.IsApprove</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a href="@Url.Action("Dashboard")" class="btn btn-info">Dashboard</a>
+</div>

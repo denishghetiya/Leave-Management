@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<h2>Welcome, @ViewBag.Username!</h2>
+<p>This is the User Dashboard.</p>
+
+<div>
+    <a href="@Url.Action("CreateLeave")" class="btn btn-primary">Create Leave</a>
+    <a href="@Url.Action("UserLeaveList")" class="btn btn-success">My Leave List</a>
+    <a href="@Url.Action("Logout", "Account")" class="btn btn-danger">Logout</a>
+</div>

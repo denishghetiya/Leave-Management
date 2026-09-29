@@ -1,0 +1,48 @@
+﻿@model List<Leave.DBContext.User>
+
+@{
+    ViewData["Title"] = "User List";
+}
+
+<h2>User List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Is Admin</th>
+            <th>Is Active</th>
+            <th>Action</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.Username</td>
+                <td>@user.Email</td>
+                <td>@(user.IsAdmin ? "Yes" : "No")</td>
+                <td>@(user.IsActive ? "Active" : "Inactive")</td>
+                <td>
+                    <a asp-action="ToggleUserStatus" asp-route-userId="@user.UserId"
+                       class="btn btn-sm @(user.IsActive ? "btn-danger" : "btn-success")">
+                        @(user.IsActive ? "Deactivate" : "Activate")
+                    </a>
+                </td>
+                <td>
+                    <a asp-action="EditUser" asp-route-userId="@user.UserId" class="btn btn-primary btn-sm">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<div >
+    <a href="@Url.Action("Dashboard")" class="btn btn-info">Dashboard</a>
+</div>
